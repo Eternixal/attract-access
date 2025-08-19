@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayPal Payment</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f9f9f9; /* bisa diganti ke #000 untuk dark mode */
+    }
+
+    #paypal-container-Q6S8WVRGGBP9S {
+      width: 100%;
+      max-width: 350px; /* biar tombol gak kepanjangan */
+      padding: 0 15px;  /* aman buat HP */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAApXbgh2NrQSJKkEdcvLb3IR2RGggPsi6a2iQtbOZCkeh7zALS9jqxp6yW9CMYjnT-LB3a5K2bPT1avWc&components=hosted-buttons&disable-funding=venmo&currency=USD">
+  </script>
+
+  <!-- Container Button -->
+  <div id="paypal-container-Q6S8WVRGGBP9S"></div>
+
+  <!-- Render Hosted Button -->
+  <script>
+    paypal.HostedButtons({
+      hostedButtonId: "Q6S8WVRGGBP9S",
+    }).render("#paypal-container-Q6S8WVRGGBP9S");
+  </script>
+
+</body>
+</html>
